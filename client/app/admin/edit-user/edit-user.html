@@ -1,0 +1,35 @@
+<md-dialog aria-label="Settings" ng-cloak>
+    <form name="signupForm">
+        <md-toolbar>
+            <div class="md-toolbar-tools color-white">
+                <h2>Edit User</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon class="color-white" md-svg-src="navigation:close" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <!-- EDIT USERNAME -->
+                <md-input-container class="md-block">
+                    <label>Username</label>
+                    <input required name="username" ng-model="user.username" minlength="4" maxlength="20" />
+                    <div ng-messages="signupForm.username.$error">
+                        <div ng-message="required">Your username must be between 4 and 20 characters long.</div>
+                    </div>
+                </md-input-container>
+
+                <!--<md-subheader>Roles</md-subheader>-->
+
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button type="submit" ng-click="cancel()" aria-label="Cancel">Cancel</md-button>
+            <md-button type="submit" ng-click="saveUser()" aria-label="Add">Save</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

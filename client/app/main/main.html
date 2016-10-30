@@ -1,0 +1,26 @@
+<!-- INFO HEADER -->
+<info-header class="ih-container"></info-header>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+    <jog ng-repeat="jog in jogsList"></jog>
+</div>
+
+<div class="main-filter-buttons">
+    <!-- CANCEL FILTER BUTTON -->
+    <md-button ng-if="isFilterApplied" ng-click="cancelFilter($event)" class="md-fab md-primary md-mini main-cancel-filter-button" aria-label="Filter Jogs">
+        <md-icon class="color-white" md-svg-icon="content:clear"></md-icon>
+        <md-tooltip md-direction="left" md-delay="delayTooltip">Cancel Filter</md-tooltip>
+    </md-button>
+    <!-- FILTER JOGS BUTTON -->
+    <md-button ng-click="filterJogs($event)" class="md-fab md-accent" ng-class="{'bg-color-darker-primary': isFilterApplied}" ng-disabled="userNotFound" aria-label="Filter Jogs">
+        <md-icon class="color-white" md-svg-icon="content:filter_list"></md-icon>
+        <md-tooltip md-direction="left" md-delay="delayTooltip">Filter Jogs</md-tooltip>
+    </md-button>
+</div>
+
+<!-- ADD JOG BUTTON -->
+<md-button ng-click="addEditJog($event)" class="md-fab md-accent main-add-button" ng-disabled="isManager" aria-label="Add Jog">
+    <md-icon class="color-white" md-svg-icon="content:add"></md-icon>
+    <md-tooltip md-direction="left" md-delay="delayTooltip">Add Jog</md-tooltip>
+</md-button>

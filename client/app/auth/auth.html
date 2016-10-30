@@ -1,0 +1,44 @@
+<div layout-fill class="auth-background" ng-cloak></div>
+
+<div layout="row" layout-align="center" class="auth-card-container">
+    <md-card layout-padding class="auth-card">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Join us!</span>
+            </md-card-title-text>
+        </md-card-title>
+
+        <form name="authForm">
+
+            <!-- USERNAME -->
+            <md-input-container class="md-block">
+                <label>username</label>
+                <input required name="username" ng-model="username" minlength="4" maxlength="20"/>
+                <div ng-messages="authForm.username.$error">
+                    <div ng-message="required">Your username must be between 4 and 20 characters long.</div>
+                </div>
+            </md-input-container>
+
+            <!-- PASSWORD -->
+            <md-input-container class="md-block">
+                <label>password</label>
+                <input required type="password" name="password" ng-model="password" minlength="4" maxlength="20"/>
+                <div ng-messages="authForm.password.$error" role="alert">
+                    <div ng-message-exp="['required', 'minlength', 'maxlength']">
+                        Your password must be between 4 and 20 characters long.
+                    </div>
+                </div>
+            </md-input-container>
+
+            <!-- BUTTONS -->
+            <md-card-actions layout="row" layout-align="center">
+                <!-- LOGIN BUTTON -->
+                <md-button class="md-raised md-primary color-white" type="submit" ng-click="login()">LOGIN</md-button>
+
+                <!-- SIGNUP BUTTON -->
+                <md-button class="md-raised md-primary color-white" type="submit" ng-click="signup()">SIGN UP</md-button>
+            </md-card-actions>
+
+        </form>
+    </md-card>
+</div>

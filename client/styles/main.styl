@@ -1,0 +1,56 @@
+@import 'colors'
+
+.main-content
+    display flex
+    flex-wrap wrap
+    justify-content center
+    position relative
+    max-width 1040px
+    top 20px
+
+.main-filter-buttons
+    position fixed
+    display flex
+    flex-direction column
+    align-items center
+    right 3%
+    bottom 90px
+
+.main-cancel-filter-button
+    background-color darkerPrimary !important
+
+.main-add-button
+    position fixed
+    right 3%
+    bottom 20px
+
+.filter-jogs-dialog,
+.add-jog-dialog
+    width 350px
+
+.add-jog-duration
+    display flex
+    justify-content space-between
+    > *
+        width 100%
+        margin 0
+
+.add-jog-date
+    position relative
+    left -13px
+    top 10px
+    
+.add-jog-clock
+    color rgba(0,0,0,0.64)
+
+.filter-toolbar
+    position fixed
+    h4
+        font-size 16px
+
+.filter-toolbar-fixed-height
+    height 56px
+    max-height 56px
+
+.filter-by-date-title
+    margin-top 20px !important

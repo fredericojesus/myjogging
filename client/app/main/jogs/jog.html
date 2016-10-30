@@ -1,0 +1,54 @@
+<md-card class="jog-card" ng-cloak>
+
+    <!-- DATE -->
+    <div class="jog-date">{{::jog.getDate()}}</div>
+
+    <!-- JOG OPTIONS -->
+    <md-menu md-position-mode="target-right target" class="jog-options">
+        <md-button class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)" aria-label="Jog Options">
+            <md-icon md-menu-origin md-svg-icon="navigation:more_vert"></md-icon>
+        </md-button>
+
+        <md-menu-content md-position-mode="target-right target" width="4">
+            <md-menu-item>
+                <md-button ng-click="addEditJog($event, $index, jog)">
+                    <md-icon md-svg-icon="editor:mode_edit" md-menu-align-target></md-icon>
+                    Edit
+                </md-button>
+            </md-menu-item>
+            <md-menu-item>
+                <md-button ng-click="deleteJog($event, $index, jog)">
+                    <md-icon md-svg-icon="action:delete"></md-icon>
+                    Delete
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+
+    <md-card-title class="jog-title">
+        <div class="jog-distance">
+            <img src="./images/jogging-icon.png" class="jog-icon">
+            <!-- JOG DISTANCE -->
+            <div>
+                <span class="jog-distance-value">{{::jog.distance}} km</span>
+                <div>
+                    <span>Distance</span>
+                </div>
+            </div>
+        </div>
+    </md-card-title>
+
+    <md-card-content class="jog-info">
+        <!-- DURATION -->
+        <div>
+            <span>Duration:</span>
+            <span>{{::jog.getDuration()}}</span>
+        </div>
+        <!-- AVG SPEED -->
+        <div>
+            <span>Avg Speed:</span>
+            <span>{{::jog.getAvgSpeed()}} km/h</span>
+        </div>
+    </md-card-content>
+
+</md-card>

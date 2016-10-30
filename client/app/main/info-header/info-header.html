@@ -1,0 +1,13 @@
+<section class="info-header" ng-cloak>
+    <div class="ih-background"></div>
+
+    <div layout-fill class="ih-info-container">
+        <div class="ih-report">
+            <span ng-if="!isManager && !usernameParams && !isFilterApplied">This week you ran {{overallDistance}}km with an average speed of {{overallAvgSpeed}}km/h</span>
+            <span ng-if="!isManager && !usernameParams && isFilterApplied">You ran {{overallDistance}}km with an average speed of {{overallAvgSpeed}}km/h from {{dateFrom}} to {{dateTo}}</span>
+            <span ng-if="isManager && !usernameParams && !isFilterApplied">This week {{::userShown.username}} ran {{overallDistance}}km with an average speed of {{overallAvgSpeed}}km/h</span>
+            <span ng-if="isManager && !usernameParams && isFilterApplied">{{::userShown.username}} ran {{overallDistance}}km with an average speed of {{overallAvgSpeed}}km/h from {{dateFrom}} to {{dateTo}}</span>
+            <span ng-if="isManager && usernameParams">User {{::usernameParams}} not found!</span>
+        </div>
+    </div>
+</section>

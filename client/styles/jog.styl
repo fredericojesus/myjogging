@@ -1,0 +1,64 @@
+@import colors
+
+.jog-card
+    position relative
+    width 300px
+    height 200px
+
+.jog-date
+    text-align center
+    margin-top 15px
+
+.jog-options
+    position absolute
+    top -3px
+    right -5px
+
+.jog-title
+    padding 50px 16px 45px
+
+.jog-icon
+    width 55px
+    margin-right 20px
+
+.jog-distance
+    display flex
+    width 100%
+    align-items center
+    justify-content center
+
+.jog-distance-value
+    font-size 35px
+    font-weight bold
+
+.jog-info
+    flex 30%
+    margin-top 10px
+    display flex
+    flex-direction column
+    > div:first-child
+        margin-bottom 5px
+
+// CARD ANIMATIONS
+
+// .jog.ng-enter
+//     transition 0.5s linear all
+//     opacity 0
+
+// .jog.ng-enter.ng-enter-active
+//     opacity 1
+
+.jog.ng-leave
+    animation 0.5s list_animation
+
+list_animation_from()
+    opacity 1
+
+list_animation_to()
+    opacity 0
+
+@keyframes list_animation
+    from
+        list_animation_from()
+    to
+        list_animation_to()

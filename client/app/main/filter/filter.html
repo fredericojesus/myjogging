@@ -1,0 +1,40 @@
+<md-dialog class="filter-jogs-dialog" aria-label="Filter Jogs" ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools color-white">
+                <h2>Filter jogs</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon class="color-white" md-svg-src="navigation:close" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-radio-group ng-model="filterType">
+                    <!-- BY WEEK -->
+                    <md-radio-button value="Week">By Week</md-radio-button>
+                    <md-subheader>Monday</md-subheader>
+                    <md-datepicker ng-model="monday" md-date-filter="onlyMondaysPredicate" md-max-date="maxDate" md-placeholder="Enter date" ng-disabled="filterType === 'Date'"></md-datepicker>
+
+                    <!-- BY DATE -->
+                    <md-radio-button class="filter-by-date-title" value="Date">By Date</md-radio-button>
+                    <!-- DATE FROM -->
+                    <md-subheader>From</md-subheader>
+                    <md-datepicker ng-model="dateFrom" md-max-date="maxDate" md-placeholder="Enter date" ng-disabled="filterType === 'Week'"></md-datepicker>
+
+                    <!-- DATE TO -->
+                    <md-subheader>To</md-subheader>
+                    <md-datepicker ng-model="dateTo" md-max-date="maxDate" md-placeholder="Enter date" ng-disabled="filterType === 'Week'"></md-datepicker>
+                </md-radio-group>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="cancel()" aria-label="Cancel">Cancel</md-button>
+            <md-button type="submit" ng-click="filterMeals()" aria-label="Add">Filter</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

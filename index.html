@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head lang="en">
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        
+        .ng-hide {
+            display: none!important;
+        }
+    </style>
+    <title>My jogging</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <!--<base href="/">-->
+
+    <!-- FONTS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+    <!-- build:css styles/lib.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/app.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/.tmp/style.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+
+<body layout="column">
+
+    <div layout-fill layout="column">
+        <app-header></app-header>
+        <md-content ui-view flex="1" layout="column" class="app-content"></md-content>
+    </div>
+
+    <!-- build:js js/lib.js -->
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/underscore.string/dist/underscore.string.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js js/app.js -->
+    <!-- inject:js -->
+    <script src="/client/app/app.module.js"></script>
+    <script src="/client/app/admin/admin.module.js"></script>
+    <script src="/client/app/auth/auth.module.js"></script>
+    <script src="/client/app/header/header.module.js"></script>
+    <script src="/client/app/main/main.module.js"></script>
+    <script src="/client/app/utils/utils.module.js"></script>
+    <script src="/client/app/main/info-header/info-header.module.js"></script>
+    <script src="/client/app/main/jogs/jog.module.js"></script>
+    <script src="/client/app/app.config.js"></script>
+    <script src="/client/app/app.routes.js"></script>
+    <script src="/client/app/admin/admin.controller.js"></script>
+    <script src="/client/app/auth/auth.controller.js"></script>
+    <script src="/client/app/auth/auth.js"></script>
+    <script src="/client/app/auth/user.js"></script>
+    <script src="/client/app/auth/userShown.js"></script>
+    <script src="/client/app/header/header.controller.js"></script>
+    <script src="/client/app/header/header.directive.js"></script>
+    <script src="/client/app/main/main.controller.js"></script>
+    <script src="/client/app/utils/toast.js"></script>
+    <script src="/client/app/admin/edit-user/edit-user.controller.js"></script>
+    <script src="/client/app/main/add-edit-jog/add-edit-jog.controllers.js"></script>
+    <script src="/client/app/main/filter/filter.controller.js"></script>
+    <script src="/client/app/main/info-header/info-header.controller.js"></script>
+    <script src="/client/app/main/info-header/info-header.directive.js"></script>
+    <script src="/client/app/main/jogs/jog.directive.js"></script>
+    <script src="/client/app/main/jogs/jog.js"></script>
+    <script src="/client/app/main/jogs/jogs-cache.js"></script>
+    <script src="/.tmp/templates.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+
+</body>
+</html>

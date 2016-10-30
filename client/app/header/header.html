@@ -1,0 +1,38 @@
+<md-toolbar class="md-hue-2" ng-cloak>
+    <div class="md-toolbar-tools header-toolbar-fixed-height">
+        <h2 class="logo">
+            <a ng-href="/">My jogging</a>
+        </h2>
+
+        <span flex></span>
+
+        <!-- OPTIONS MENU -->
+        <md-menu md-position-mode="target-right target" ng-if="authService.isAuthenticated()">
+            <md-button class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)" aria-label="More">
+                <md-icon md-menu-origin md-svg-icon="navigation:more_vert"></md-icon>
+            </md-button>
+    
+            <md-menu-content md-position-mode="target-right target" width="4">
+                <md-menu-item>
+                    <md-button ng-disabled="true">
+                        <md-icon md-svg-icon="action:settings" md-menu-align-target></md-icon>
+                        Settings
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item ng-if="authService.isAuthorized('manager') || authService.isAuthorized('admin')">
+                    <md-button ng-href="/admin">
+                        <md-icon md-svg-icon="action:lock" md-menu-align-target></md-icon>
+                        Admin Page
+                    </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                    <md-button ng-click="logout()">
+                        <md-icon md-svg-icon="action:power_settings_new"></md-icon>
+                        Logout
+                    </md-button>
+                </md-menu-item>
+                <!--<md-menu-divider></md-menu-divider>-->
+            </md-menu-content>
+        </md-menu>
+    </div>
+</md-toolbar>

@@ -1,0 +1,50 @@
+<md-dialog class="add-jog-dialog" aria-label="Add Jog" ng-cloak>
+    <form>
+        <!-- HEADER -->
+        <md-toolbar>
+            <div class="md-toolbar-tools color-white">
+                <h2>{{::title}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon class="color-white" md-svg-src="navigation:close" aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <!-- DISTANCE -->
+                <md-input-container class="md-block">
+                    <label>distance in km</label>
+                    <input type="number" name="distance" ng-model="distance" min="0" max="100" step="0.01">
+                </md-input-container>
+
+                <!-- DURATION -->
+                <div class="add-jog-duration">
+                    <md-input-container class="md-block">
+                        <label>hours</label>
+                        <input type="number" name="hours" ng-model="hours"></input>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>minutes</label>
+                        <input type="number" name="minutes" ng-model="minutes"></input>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>seconds</label>
+                        <input type="number" name="seconds" ng-model="seconds"></input>
+                    </md-input-container>
+                </div>
+
+                <!-- DATE -->
+                <md-datepicker class="add-jog-date" ng-model="date" md-max-date="maxDate" md-placeholder="Enter date"></md-datepicker>
+            </div>
+        </md-dialog-content>
+
+        <!-- CANCEL AND SAVE OR EDIT BUTTONS -->
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="cancel()" aria-label="Cancel">Cancel</md-button>
+            <md-button type="submit" ng-click="addEditJog()" aria-label="Add">{{::addEditText}}</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

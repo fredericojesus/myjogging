@@ -1,0 +1,39 @@
+<div layout-align="center" layout="row" class="admin">
+    <md-card class="admin-users-card">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Users</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <md-list ng-cloak>
+                <md-list-item ng-repeat="user in usersList" ng-click="goToUser(user.username)">
+                    <md-icon md-svg-icon="action:account_circle" aria-label="User Image"></md-icon>
+                    <p>{{user.username}}</p>
+
+                    <!-- USER OPTIONS -->
+                    <md-menu md-position-mode="target-right target" class="md-secondary" ng-if="isAdmin">
+                        <md-button class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)" aria-label="User Options">
+                            <md-icon md-menu-origin md-svg-icon="navigation:more_vert"></md-icon>
+                        </md-button>
+
+                        <md-menu-content md-position-mode="target-right target" width="4">
+                            <md-menu-item>
+                                <md-button ng-click="editUser(user)" aria-label="Edit User">
+                                    <md-icon md-svg-icon="editor:mode_edit" md-menu-align-target></md-icon>
+                                    Edit
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="deleteUser($index, user)" aria-label="Delete User">
+                                    <md-icon md-svg-icon="action:delete"></md-icon>
+                                    Delete
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+</div>

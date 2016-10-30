@@ -1,0 +1,37 @@
+@import 'colors'
+
+.ih-container
+    width 100%
+
+.info-header
+    position relative
+    width 100%
+    height 230px
+    transition height ease .5s
+
+.ih-background
+    position absolute
+    background url('../images/jogging.png')
+    background-size cover
+    background-position center
+    width 100%
+    height 100%
+
+.ih-info-container
+    position relative
+    display flex
+    justify-content center
+    align-items center
+    color #fff
+
+.ih-report
+    margin 30px
+    font-family Montserrat
+    font-size 30px
+    text-shadow 0 0 5px #000
+    text-align center
+
+@media (min-width: 600px)
+    .ih-report
+        margin 50px
+        font-size 35px
